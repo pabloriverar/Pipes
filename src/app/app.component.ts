@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { promise } from 'protractor';
+import { resolve } from 'dns';
+import { TimeoutError } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -16,4 +19,32 @@ export class AppComponent {
 
  Salario:number = 1234.5;
 
+ fecha: Date = new Date();
+
+ idioma: string = 'es';
+
+ heroe = {
+   nombre : 'Logan',
+   clave: 'Wolverine',
+   edad: 500,
+   direccion: {
+     calle:'primera',
+     casa: 20
+   }
+ }
+
+valorPromesa = new Promise<string> ((resolve) => {
+
+  setTimeout(()=>{
+resolve('llego la data');
+
+  },4500);
+
+});
+
+
+
+
 }
+
+
